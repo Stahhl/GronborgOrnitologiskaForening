@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Grönborgs Ornitologiska Förening</title>
+    <link href="includes/style/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="includes/img/favicon.png" />
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+    <body>
+        <nav>
+            <div class="logo">
+                <h4>Grönborg Ornitologiska Förening</h4>
+            </div>
+
+        </nav>
+        <div class="add"><h3>Add</h3></div>
+        <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+            <input type="text" id="add-person" placeholder="Person Name" />
+            <select id="add-bird" placeholder="Bird Name" />
+            	<option>Berguv</option>
+            	<option>Blåmes</option>
+            	<option>Kanadagås</option>
+            	<option>Duva</option>
+            	<option>Fasan</option>
+           		<option>Fiskmås</option>
+            	<option>Gräsand</option>
+            	<option>Gulsparv</option>
+            	<option>Hussvala</option>
+            	<option>Kråka</option>
+           		<option>Kungsörn</option>
+            	<option>Pilfink</option>
+            	<option>Skata</option>
+            	<option>Sädesärla</option>
+            	<option>Talgoxe</option>
+            </select>
+            <input type="text" id="add-location" placeholder="Location" />
+            <input type="text"
+                   name="datetimes"
+                   id="add-datetimes"
+                   placeholder="datetime"
+                   onmousedown="getDate()"
+                   autocomplete="off" />
+
+            <input type="submit" value="Add" />
+        </form>
+        <div class="add"><h3>Search</h3></div>
+        <form action="javascript:void(0);" onsubmit="SearchItem()">
+            <input type="text" id="search-id" placeholder="Id" />
+            <input type="text" id="search-person" placeholder="Person Name" />
+            <select id="search-bird" placeholder="Bird Name" />
+           		<option>Berguv</option>
+            	<option>Blåmes</option>
+            	<option>Kanadagås</option>
+            	<option>Duva</option>
+            	<option>Fasan</option>
+            	<option>Fiskmås</option>
+            	<option>Gräsand</option>
+            	<option>Gulsparv</option>
+            	<option>Hussvala</option>
+            	<option>Kråka</option>
+            	<option>Kungsörn</option>
+            	<option>Pilfink</option>
+            	<option>Skata</option>
+            	<option>Sädesärla</option>
+            	<option>Talgoxe</option>
+            </select>
+            <input type="text" id="search-bird-family" placeholder="Bird Family" />
+            <input type="text" id="search-location" placeholder="Location" />
+            <input type="text" id="search-datetime" placeholder="Date & Time" />
+
+            <input type="submit" id="search-btn" value="Search" />
+            <input type="button"
+                   id="search-reset"
+                   value="Reset"
+                   onclick="ResetSearch()" />
+        </form>
+
+        <div id="spoiler">
+            <h3>Edit</h3>
+            <form class="my-form">
+                <input type="hidden" id="edit-id" />	
+                <input type="text" id="edit-person" placeholder="Person Name" />
+                <select id="edit-bird" placeholder="Bird Name" />
+                	<option>Berguv</option>
+                	<option>Blåmes</option>
+                	<option>Kanadagås</option>
+                	<option>Duva</option>
+                	<option>Fasan</option>
+               		<option>Fiskmås</option>
+            		<option>Gräsand</option>
+              		<option>Gulsparv</option>
+             		<option>Hussvala</option>
+            	    <option>Kråka</option>
+            	    <option>Kungsörn</option>
+             		<option>Pilfink</option>
+            		<option>Skata</option>
+             		<option>Sädesärla</option>
+             		<option>Talgoxe</option>
+                </select>
+                <input type="hidden" id="edit-bird-family" />
+                <input type="text" id="edit-location" placeholder="Location" />
+                <input type="text"
+                       name="datetimes"
+                       id="edit-datetimes"
+                       placeholder="datetime"
+                       onmousedown="getDate()"
+                       autocomplete="off" />
+                <input type="submit" value="Save" />
+                <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
+
+        <p id="counter"></p>
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>PersonName</th>
+                <th>BirdName</th>
+                <th>BirdFamily</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tbody id="birds"></tbody>
+        </table>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+        <script src="includes/scripts/site.js"></script>
+        <script src="includes/scripts/search.js"></script>
+        <script type="text/javascript"
+                src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript"
+                src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <div id="chartContainer"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </body>
+    <footer>Made by Arvid, Jocke och Micke - GOF INC</footer>
+</html>
